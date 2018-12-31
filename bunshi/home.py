@@ -1,5 +1,5 @@
 from flask import (Blueprint, flash, render_template, request)
-import functools, requests
+import requests
 from bs4 import BeautifulSoup
 
 bp = Blueprint("home", __name__)
@@ -25,8 +25,9 @@ def home():
 
         try:
             error = False
-            imageSource = getImage(compound)[0]
-            pageURL = getImage(compound)[1]
+            compoundLinks = getImage(compound)
+            imageSource = compoundLinks[0]
+            pageURL = compoundLinks[1]
 
             if compound in recent:
                 recent.remove(compound)
