@@ -15,6 +15,13 @@ Create a virtualenv & activate it
 $ python3 -m venv venv
 $ . venv/bin/activate
 ```
+
+...on Windows
+```
+> py -3 -m venv venv
+> . venv/Scripts/activate
+
+```
 ...on Windows cmd
 ```
 > py -3 -m venv venv

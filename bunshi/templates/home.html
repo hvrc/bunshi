@@ -8,7 +8,8 @@
     </head>
 
     <header>
-        <!-- Title & description -->
+        <!-- Title & description
+        ----------------------------------------------------------------------->
         <h1 class=pageHeader> Bunshi </h1>
         <p >
             Search for the molecular structure of any compound! <br>
@@ -18,7 +19,8 @@
 
     <div class="container">
         <body>
-            <!-- Alert -->
+            <!-- Alert
+            ------------------------------------------------------------------->
             {% with messages = get_flashed_messages() %}
                 {% if messages %}
                     {% for message in messages %}
@@ -29,13 +31,16 @@
                 {% endif %}
             {% endwith %}
 
-            <!-- Search bar -->
+            <!-- Search bar
+            ------------------------------------------------------------------->
             <br> <br>
             <form method="post">
                 <input name="compound" id="compound" required></input>
                 <input type="submit" value="Search"></input>
             </form>
-            <!-- Image of molecule -->
+
+            <!-- Image of molecule
+            ------------------------------------------------------------------->
             {% if imageSource|length > 0 %}
                 <img class=mainImage src="{{ imageSource }}" alt="Structure"></img>
                 <div title="PubChem">
@@ -43,14 +48,16 @@
                 </div>
             {% endif %}
 
-            <!-- Error text, if name is incorrect -->
+            <!-- Error text, if name is incorrect
+            ------------------------------------------------------------------->
             {% if error %}
                 <br><br>
                 <h2> Couldn't find that compound! <br> Try using the correct IUPAC name. </h2>
                 <br><br>
             {% endif %}
 
-            <!-- Recently searched compounds -->
+            <!-- Recently searched compounds
+            ------------------------------------------------------------------->
             {% if recent|length > 1 %}
                 <p> Recent searches: </p>
                 {% for compound in recent %}
@@ -69,7 +76,8 @@
     </div>
 
     <footer>
-        <!-- footer -->
+        <!-- footer
+        ----------------------------------------------------------------------->
         <br>
         <div title="Github">
             by <a href="https://github.com/hvrc" target="_blank"> machi </a>
