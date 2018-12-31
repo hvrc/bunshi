@@ -1,7 +1,7 @@
 html {
     font-family: "Comic Sans MS", cursive, sans-serif;
-    color: #46667c;
-    background: #a2cdbe;
+    color: #673f73; /* Text colour */
+    background: #ffe2eb; /* Background colour */
     text-align: center;
 }
 
@@ -50,6 +50,7 @@ body {
 
 input[name=recent] {
     font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: times;
     color: #3657d4;
     background: none;
     text-decoration: underline;
