@@ -13,7 +13,7 @@
         <h1 class=pageHeader> Bunshi </h1>
         <p >
             Search for the molecular structure of any compound! <br>
-            Enter the <a href="https://en.wikipedia.org/wiki/IUPAC_nomenclature_of_organic_chemistry" target="_blank"> proper IUPAC name </a> below
+            Enter a valid <a href="https://en.wikipedia.org/wiki/IUPAC_nomenclature_of_organic_chemistry" target="_blank">IUPAC</a> or common name below
         </p>
     </header>
 
@@ -52,7 +52,7 @@
             ------------------------------------------------------------------->
             {% if error %}
                 <br><br>
-                <h2> Couldn't find "{{ compound }}"! <br> Try using the correct IUPAC name. </h2>
+                <h2> Couldn't find <u>{{ compound }}</u>! <br> Try using the correct IUPAC or common name. </h2>
                 <br><br>
             {% endif %}
 
