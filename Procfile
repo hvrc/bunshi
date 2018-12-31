@@ -1,1 +1,1 @@
-web: gunicorn app:bunshi
+web: gunicorn bunshi:app

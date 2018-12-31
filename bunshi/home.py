@@ -1,20 +1,11 @@
-from flask import (Blueprint, flash, render_template, request)
-import requests
-from bs4 import BeautifulSoup
+from bunshi import app
+from bunshi.image import getImage
+from flask import flash, render_template, request
 
-bp = Blueprint("home", __name__)
 recent = []
-limit = 5
+maxRecent = 5
 
-def getImage(compound):
-    imageName = "%s.png" % (compound)
-    pageURL = "https://pubchem.ncbi.nlm.nih.gov/compound/%s" % (compound)
-    page = requests.get(pageURL)
-    soup = BeautifulSoup(page.text, "html.parser")
-    imageSource = soup.find("meta", {"property": "og:image"})["content"]
-    return imageSource, pageURL
-
-@bp.route("/", methods = ["POST", "GET"])
+@app.route("/", methods = ["POST", "GET"])
 def home():
     #flash("This is a test")
     if request.method == "POST":
@@ -33,7 +24,7 @@ def home():
                 recent.remove(compound)
             recent.insert(0, compound)
 
-            if len(recent) > limit + 1:
+            if len(recent) > maxRecent + 1:
                 recent.pop(-1)
 
         except TypeError as e:
