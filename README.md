@@ -6,19 +6,18 @@ Gets images from [PubChem](https://pubchem.ncbi.nlm.nih.gov/)
 
 ## Run locally
 
-**_Optional setup for Windows_** 
+**Optional method for Windows**
 
-_Clone_
+Clone
 ```
 $ git clone "https://github.com/hvrc/Bunshi.git"
 $ cd Bunshi
-
 ```
-_Run the .bat file..._
+Run the .bat file...
 ```
 $ start run.bat
 ```
-_...and refresh the page_
+...and refresh the page
 
 ### OR
 
