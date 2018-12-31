@@ -6,7 +6,7 @@ Gets images from [PubChem](https://pubchem.ncbi.nlm.nih.gov/)
 
 ## Run locally
 
-**Optional method for Windows**
+### Optional method for Windows
 
 Clone
 ```
