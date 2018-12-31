@@ -1,8 +1,8 @@
 # Bunshi
 
-Displays the bond-line structure of a compound
+## https://bunshi.herokuapp.com/
 
-Gets images from [PubChem](https://pubchem.ncbi.nlm.nih.gov/)
+Displays the bond-line structure of a compound. Gets images from [PubChem](https://pubchem.ncbi.nlm.nih.gov/).
 
 ## Run locally
 
@@ -65,5 +65,3 @@ $ flask run
 ```
 
 Open [localhost:5000](http://127.0.0.1:5000) in a browser
-
-![alt text](https://i.imgur.com/W18Itgg.png)
