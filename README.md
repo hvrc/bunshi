@@ -12,6 +12,13 @@ $ git clone "https://github.com/hvrc/Bunshi.git"
 $ cd Bunshi
 ```
 
+_Optional setup for Windows only
+Run the .bat file...
+```
+$ start run.bat
+```
+...and refresh the page_
+
 Create a virtualenv & activate it
 ```
 $ python3 -m venv venv
