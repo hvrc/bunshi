@@ -13,6 +13,7 @@ $ cd Bunshi
 ```
 
 _Optional setup for Windows only
+
 Run the .bat file..._
 ```
 $ start run.bat
