@@ -6,21 +6,27 @@ Gets images from [PubChem](https://pubchem.ncbi.nlm.nih.gov/)
 
 ## Run locally
 
+**_Optional setup for Windows_** 
+
+_Clone_
+```
+$ git clone "https://github.com/hvrc/Bunshi.git"
+$ cd Bunshi
+
+```
+_Run the .bat file..._
+```
+$ start run.bat
+```
+_...and refresh the page_
+
+### OR
+
 Clone
 ```
 $ git clone "https://github.com/hvrc/Bunshi.git"
 $ cd Bunshi
 ```
-
-
-**_Optional setup for Windows only_**
-
-**_Run the .bat file..._**
-```
-$ start run.bat
-```
-**_...and refresh the page_**
-
 
 Create a virtualenv & activate it
 ```
