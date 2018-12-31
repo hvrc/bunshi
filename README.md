@@ -1,6 +1,8 @@
 # Bunshi
 
-Description
+Displays the bond-line structure of a compound
+
+Gets images from [PubChem](https://pubchem.ncbi.nlm.nih.gov/)
 
 ## Run locally
 
