@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="static/css/style.css">
+        <link rel="shortcut icon" href="static/images/benzeneIcon.png">
+        <title> Bunshi </title>
+    </head>
+
+    <header>
+        <!-- Title & description -->
+        <h1 class=pageHeader> Bunshi </h1>
+        <p >
+            Search for the molecular structure of any compound! <br>
+            Enter the <a href="https://en.wikipedia.org/wiki/IUPAC_nomenclature_of_organic_chemistry" target="_blank"> proper IUPAC name </a> below
+        </p>
+    </header>
+
+    <div class="container">
+        <body>
+            <!-- Alert -->
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <p class=flashes>
+                        Alert! {{ message }}
+                    </p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <!-- Search bar -->
+            <br> <br>
+            <form method="post">
+                <input name="compound" id="compound" required></input>
+                <input type="submit" value="Search"></input>
+            </form>
+            <!-- Image of molecule -->
+            {% if imageSource|length > 0 %}
+                <img class=mainImage src="{{ imageSource }}" alt="Structure"></img>
+                <div title="PubChem">
+                    <a href="{{ pageURL }}" target="_blank"> More about {{ compound }} </a>
+                </div>
+            {% endif %}
+
+            <!-- Error text, if name is incorrect -->
+            {% if error %}
+                <br><br>
+                <h2> Couldn't find that compound! <br> Try using the correct IUPAC name. </h2>
+                <br><br>
+            {% endif %}
+
+            <!-- Recently searched compounds -->
+            {% if recent|length > 1 %}
+                <p> Recent searches: </p>
+                {% for compound in recent %}
+                    {% if compound != recent[0] %}
+                        <form method="post">
+                            <input name="recent" id="recent" type="submit" value="{{ compound }}"></input>
+                        </form>
+                    {% elif error %}
+                        <form method="post">
+                            <input name="recent" id="recent" type="submit" value="{{ compound }}"></input>
+                        </form>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </body>
+    </div>
+
+    <footer>
+        <!-- footer -->
+        <br>
+        <div title="Github">
+            by <a href="https://github.com/hvrc" target="_blank"> machi </a>
+        </div>
+        <p> gets images from <a href="https://pubchem.ncbi.nlm.nih.gov/" target="_blank"> PubChem </a> </p>
+    </footer>
+
+</html>

@@ -1,0 +1,7 @@
+__pycache__
+bunshi/__pycache__
+.DS_Store
+instance
+venv
+venv/
+*.pyc
