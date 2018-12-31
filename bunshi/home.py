@@ -12,7 +12,7 @@ def home():
         posts = request.form
 
         for post in posts.items():
-            session["compound"] = post[1]
+            session["compound"] = post[1].lower()
 
         try:
             error = False

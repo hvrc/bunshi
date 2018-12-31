@@ -1,4 +1,4 @@
 import os
 
 class Config(object):
-    SECRET_KEY = os.environ.get('SECRET_KEY') or "acetate"
+    SECRET_KEY = os.urandom(16) # or "acetate"
