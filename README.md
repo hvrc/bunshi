@@ -18,8 +18,8 @@ $ . venv/bin/activate
 
 ...on Windows
 ```
-> py -3 -m venv venv
-> . venv/Scripts/activate
+$ py -3 -m venv venv
+$ . venv/Scripts/activate
 
 ```
 ...on Windows cmd
