@@ -13,11 +13,11 @@ $ cd Bunshi
 ```
 
 _Optional setup for Windows only
-Run the .bat file...
+Run the .bat file..._
 ```
 $ start run.bat
 ```
-...and refresh the page_
+_...and refresh the page_
 
 Create a virtualenv & activate it
 ```
