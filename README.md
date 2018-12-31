@@ -12,13 +12,15 @@ $ git clone "https://github.com/hvrc/Bunshi.git"
 $ cd Bunshi
 ```
 
-_Optional setup for Windows only_
 
-_Run the .bat file..._
+**_Optional setup for Windows only_**
+
+**_Run the .bat file..._**
 ```
 $ start run.bat
 ```
-_...and refresh the page_
+**_...and refresh the page_**
+
 
 Create a virtualenv & activate it
 ```
