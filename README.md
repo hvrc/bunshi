@@ -12,9 +12,9 @@ $ git clone "https://github.com/hvrc/Bunshi.git"
 $ cd Bunshi
 ```
 
-_Optional setup for Windows only
+_Optional setup for Windows only_
 
-Run the .bat file..._
+_Run the .bat file..._
 ```
 $ start run.bat
 ```
