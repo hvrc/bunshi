@@ -12,17 +12,17 @@ def home():
         posts = request.form
 
         for post in posts.items():
-            session["compound"] = post[1].lower()
+            compound = post[1].lower()
 
         try:
             error = False
-            links = getImage(session["compound"])
+            links = getImage(compound)
             imageSource = links[0]
             pageURL = links[1]
 
-            if session["compound"] in recent:
-                recent.remove(session["compound"])
-            recent.insert(0, session["compound"])
+            if compound] in recent:
+                recent.remove(compound)
+            recent.insert(0, compound)
 
             if len(recent) > recentMax:
                 recent.pop(-1)
@@ -34,10 +34,9 @@ def home():
 
         return render_template("home.html",
                                imageSource = imageSource,
-                               compound = session["compound"],
+                               compound = compound,
                                pageURL = pageURL,
                                error = error,
                                recent = recent)
 
-    return render_template("home.html",
-                           recent = recent)
+    return render_template("home.html")
