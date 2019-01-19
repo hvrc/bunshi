@@ -3,11 +3,11 @@ from bunshi.image import getImage
 from flask import flash, render_template, session, request
 
 recent = []
-maxRecent = 5
+recentMax = 5
 
 @app.route("/", methods = ["POST", "GET"])
 def home():
-    #flash("This is a test")
+    flash(recent)
     if request.method == "POST":
         posts = request.form
 
@@ -16,15 +16,15 @@ def home():
 
         try:
             error = False
-            compoundLinks = getImage(session["compound"])
-            imageSource = compoundLinks[0]
-            pageURL = compoundLinks[1]
+            links = getImage(session["compound"])
+            imageSource = links[0]
+            pageURL = links[1]
 
             if session["compound"] in recent:
                 recent.remove(session["compound"])
             recent.insert(0, session["compound"])
 
-            if len(recent) > maxRecent + 1:
+            if len(recent) > recentMax:
                 recent.pop(-1)
 
         except TypeError as e:
