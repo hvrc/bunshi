@@ -39,5 +39,5 @@ def home():
                                error = error,
                                recent = recent)
 
-    return render_template("home.html")
-                            #recent = recent)
+    return render_template("home.html,
+                           recent = recent)
