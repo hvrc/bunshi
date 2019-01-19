@@ -63,11 +63,11 @@
                 {% for search in recent %}
                     {% if search != recent[0] %}
                         <form method="post">
-                            <input name="recent" id="recent" type="submit" value="{{ compound }}"></input>
+                            <input name="recent" id="recent" type="submit" value="{{ search }}"></input>
                         </form>
                     {% elif error %}
                         <form method="post">
-                            <input name="recent" id="recent" type="submit" value="{{ compound }}"></input>
+                            <input name="recent" id="recent" type="submit" value="{{ search }}"></input>
                         </form>
                     {% endif %}
                 {% endfor %}
