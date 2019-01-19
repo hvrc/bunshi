@@ -9,7 +9,7 @@ recentMax = 5
 def home():
     # flash(request.method)
     # flash(posts)
-    flash(recent)
+    # flash(recent)
     if request.method == "POST":
         posts = request.form
 
