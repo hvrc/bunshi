@@ -38,6 +38,7 @@ def home():
                                pageURL = pageURL,
                                error = error,
                                recent = recent)
-
+                               
+    recent = []
     return render_template("home.html",
                            recent = recent)
