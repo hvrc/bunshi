@@ -5,7 +5,7 @@ from flask import flash, render_template, session, request
 recent = []
 recentMax = 5
 
-@app.route("/", methods = ["POST", "GET"])
+@app.route("/", methods = ["POST"])
 def home():
     flash(recent)
     if request.method == "POST":
@@ -20,7 +20,7 @@ def home():
             imageSource = links[0]
             pageURL = links[1]
 
-            if compound] in recent:
+            if compound in recent:
                 recent.remove(compound)
             recent.insert(0, compound)
 
@@ -40,3 +40,4 @@ def home():
                                recent = recent)
 
     return render_template("home.html")
+                            #recent = recent)
