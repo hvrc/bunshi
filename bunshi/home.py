@@ -12,7 +12,6 @@ def home():
     # flash(recent)
     if request.method == "POST":
         posts = request.form
-
         for post in posts.items():
             compound = post[1].lower()
 
