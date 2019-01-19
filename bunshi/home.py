@@ -5,7 +5,7 @@ from flask import flash, render_template, session, request
 recent = []
 recentMax = 5
 
-@app.route("/", methods = ["POST"])
+@app.route("/", methods = ["POST", "GET"])
 def home():
     flash(recent)
     if request.method == "POST":
