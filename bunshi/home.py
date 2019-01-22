@@ -3,7 +3,7 @@ from bunshi.image import getImage
 from flask import flash, render_template, session, request
 
 recent = []
-recentMax = 5
+recentMax = 4
 
 @app.route("/", methods = ["POST", "GET"])
 def home():
