@@ -1,5 +1,5 @@
 html {
-    font-family: Georgia, Serif;
+    font-family: Verdana, Geneva, sans-serif;
     color: #673f73; /* Text colour */
     background: #ffe2eb; /* Background colour */
     text-align: center;
@@ -49,7 +49,7 @@ body {
 }
 
 input[name=recent] {
-    font-family: Georgia, Serif;
+    font-family: Verdana, Geneva, sans-serif;
     color: #3657d4;
     background: none;
     text-decoration: underline;
