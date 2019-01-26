@@ -8,6 +8,7 @@ recentMax = 5
 @app.route("/", methods = ["POST", "GET"])
 def home():
     # flash(recent)
+    nuclearFission = False
     if request.method == "POST":
         posts = request.form
         for post in posts.items():
@@ -18,6 +19,9 @@ def home():
             links = getImage(compound)
             imageSource = links[0]
             pageURL = links[1]
+            
+            if compound == "split atom":
+                nuclearFission = True
 
             # if compound in recent:
             #     recent.remove(compound)
@@ -36,7 +40,8 @@ def home():
                                compound = compound,
                                pageURL = pageURL,
                                error = error,
-                               recent = recent)
+                               recent = recent,
+                               nuclearFission = nuclearFission)
 
     return render_template("home.html",
                            recent = recent)
