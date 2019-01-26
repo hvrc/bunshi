@@ -13,9 +13,9 @@
         <!-- Title & description
         ----------------------------------------------------------------------->
         <br>
-        <h1 class=pageHeader> Bunshi </h1>
+        <h1 class="main-header"> Bunshi </h1>
         <p>
-            Search for the molecular structure of any compound! <br>
+            Search for the bond-line structure of any compound or molecule! <br>
             Enter a valid <a href="https://en.wikipedia.org/wiki/IUPAC_nomenclature_of_organic_chemistry" target="_blank">IUPAC</a> or common name below
         </p>
     </header>
@@ -54,9 +54,9 @@
             <!-- Error text, if name is incorrect
             ------------------------------------------------------------------->
             {% if error %}
-                <br><br>
-                <h2> Couldn't find <u>{{ compound }}</u>! <br> Try using the correct IUPAC or common name. </h2>
-                <br><br>
+                <br> <br>
+                <h3> Couldn't find <strong>{{ compound }}</strong>! <br> Try using the correct IUPAC or common name. </h3>
+                <br> <br>
             {% endif %}
 
             <!-- Recently searched compounds
