@@ -15,14 +15,14 @@ def home():
             compound = post[1].lower()
 
         try:
+            if compound == "split atom":
+                nuclearFission = True
+
             error = False
             links = getImage(compound)
             imageSource = links[0]
             pageURL = links[1]
             
-            if compound == "split atom":
-                nuclearFission = True
-
             # if compound in recent:
             #     recent.remove(compound)
             # recent.insert(0, compound)
