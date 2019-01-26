@@ -4,36 +4,39 @@ from flask import flash, render_template, session, request
 
 recent = []
 recentMax = 5
+triggers = ["split atom", "explode"]
 
 @app.route("/", methods = ["POST", "GET"])
 def home():
     # flash(recent)
-    nuclearFission = False
+    easterEgg = False
+    error = False
+    imageSource = ""
+    pageURL = ""
+
     if request.method == "POST":
         posts = request.form
         for post in posts.items():
             compound = post[1].lower()
 
-        try:
-            if compound == "split atom":
-                nuclearFission = True
+        if compound in triggers:
+            easterEgg = True
 
-            error = False
-            links = getImage(compound)
-            imageSource = links[0]
-            pageURL = links[1]
-            
-            # if compound in recent:
-            #     recent.remove(compound)
-            # recent.insert(0, compound)
-            #
-            # if len(recent) > recentMax:
-            #     recent.pop(-1)
+        else:
+            try:
+                links = getImage(compound)
+                imageSource = links[0]
+                pageURL = links[1]
 
-        except TypeError as e:
-            error = True
-            imageSource = ""
-            pageURL = ""
+                # if compound in recent:
+                #     recent.remove(compound)
+                # recent.insert(0, compound)
+                #
+                # if len(recent) > recentMax:
+                #     recent.pop(-1)
+
+            except TypeError as e:
+                error = True
 
         return render_template("home.html",
                                imageSource = imageSource,
@@ -41,7 +44,7 @@ def home():
                                pageURL = pageURL,
                                error = error,
                                recent = recent,
-                               nuclearFission = nuclearFission)
+                               easterEgg = easterEgg)
 
     return render_template("home.html",
                            recent = recent)
