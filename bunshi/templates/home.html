@@ -12,21 +12,22 @@
     <header>
         <!-- Title & description
         ----------------------------------------------------------------------->
+        <br>
         <h1 class="main-header"> Bunshi </h1>
         <p>
-            Search for the bond-line structure <br> of any compound or molecule! <br>
+            Search for the bond-line structure of any compound or molecule.
             Enter a valid <a href="https://en.wikipedia.org/wiki/IUPAC_nomenclature_of_organic_chemistry" target="_blank">IUPAC</a> or common name below
         </p>
     </header>
 
-    <div class="container">
+    <div class="main-container">
         <body>
             <!-- Alert
             ------------------------------------------------------------------->
             {% with messages = get_flashed_messages() %}
                 {% if messages %}
                     {% for message in messages %}
-                    <p class=flashes>
+                    <p class="flashes">
                         Alert! {{ message }}
                     </p>
                     {% endfor %}
@@ -35,16 +36,16 @@
 
             <!-- Search bar
             ------------------------------------------------------------------->
-            <br> <br> <br>
-            <form method="post">
-                <input name="compound" id="compound" required></input>
-                <input type="submit" value="Search"></input>
+            <br>
+            <form class="search-bar" method="post">
+                <input name="compound" id="compound" required> </input>
+                <input class="search-button" type="submit" value="Search"> </input>
             </form>
 
             <!-- Image of molecule
             ------------------------------------------------------------------->
             {% if imageSource|length > 0 %}
-                <img class=mainImage src="{{ imageSource }}" alt="Structure"></img>
+                <img class="main-image" src="{{ imageSource }}" alt="Structure"></img>
                 <div title="PubChem">
                     <a href="{{ pageURL }}" target="_blank"> More about {{ compound }} </a>
                 </div>
@@ -54,7 +55,9 @@
             ------------------------------------------------------------------->
             {% if error %}
                 <br> <br>
-                <h3> Couldn't find <strong>{{ compound }}</strong>! <br> Try using the correct IUPAC or common name. </h3>
+                <h2> Couldn't find </h2>
+                <h1> {{ compound }} </h1>
+                <h2> Try using the correct <br> IUPAC or common name. </h2>
                 <br> <br>
             {% endif %}
 
@@ -86,7 +89,9 @@
         <div title="Github">
             by <a href="https://github.com/hvrc" target="_blank"> hvrc </a>
         </div>
-        <p> gets images from <a href="https://pubchem.ncbi.nlm.nih.gov/" target="_blank"> PubChem </a> </p>
+        <p>
+            Gets images from <a href="https://pubchem.ncbi.nlm.nih.gov/" target="_blank"> PubChem </a>
+        </p>
     </footer>
 
 </html>
