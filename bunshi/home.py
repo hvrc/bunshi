@@ -9,6 +9,7 @@ recentMax = 5
 def home():
     # flash(recent)
     easterEgg = False
+    preferred = True
     error = False
     imageSource = ""
     pageURL = ""
@@ -28,6 +29,7 @@ def home():
             IUPAC = info[2]
             formula = info[3]
             weight = info[4]
+            preferred = info[5]
 
             if IUPAC == "dioxotungsten":
                 easterEgg = True
@@ -49,9 +51,10 @@ def home():
                                IUPAC = IUPAC,
                                formula = formula,
                                weight = weight,
+                               easterEgg = easterEgg,
+                               preferred = preferred,
                                error = error,
-                               recent = recent,
-                               easterEgg = easterEgg)
+                               recent = recent)
 
     return render_template("home.html",
                            recent = recent)

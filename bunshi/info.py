@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 def getInfo(compound):
+
     imageName = "%s.png" % (compound)
     pageURL = "https://pubchem.ncbi.nlm.nih.gov/compound/%s" % (compound)
     page = requests.get(pageURL)
@@ -22,8 +23,14 @@ def getInfo(compound):
     formulaSoup = BeautifulSoup(formulaPage.text, "html.parser")
     weightSoup = BeautifulSoup(weightPage.text, "html.parser")
 
-    IUPAC = iupacSoup.find("span", {"class": "value"}).string
+    try:
+        IUPAC = iupacSoup.find("span", {"class": "value"}).string
+        preferred = True
+    except AttributeError as e:
+        IUPAC = soup.find("meta", {"property": "og:title"})["content"]
+        preferred = False
+
     formula = formulaSoup.find("span", {"class": "value"}).string
     weight = weightSoup.find("span", {"class": "value"}).string
 
-    return imageSource, pageURL, IUPAC, formula, weight
+    return imageSource, pageURL, IUPAC, formula, weight, preferred

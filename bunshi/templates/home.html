@@ -50,8 +50,15 @@
                 {% else %}
                     <img class="main-image" src="{{ imageSource }}" alt="Structure"></img>
                 {% endif %}
+
                 <p> <i> {{ compound }} </i> </p>
-                <p> IUPAC Name: <b> {{ IUPAC }} </b> </p>
+
+                {% if preferred %}
+                    <p> Pref. IUPAC Name: <b> {{ IUPAC }} </b> </p>
+                {% else %}
+                    <p> Molecular Name: <b> {{ IUPAC }} </b> </p>
+                {% endif %}
+
                 <p> Molecular Formula: <b> {{ formula }} </b> </p>
                 <p> Molecular Weight: <b> {{ weight }}g </b> </p>
 
