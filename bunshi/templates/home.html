@@ -45,7 +45,7 @@
             <!-- Image of molecule
             ------------------------------------------------------------------->
             {% if imageSource|length > 0 %}
-                {% if easterEgg %}
+                {% if owoEgg %}
                     <img class="owo-image" src="static/images/owo.png" alt="owo"></img>
                 {% else %}
                     <img class="main-image" src="{{ imageSource }}" alt="Structure"></img>
@@ -65,6 +65,11 @@
                 <div title="PubChem">
                     <a href="{{ pageURL }}" target="_blank"> More about {{ compound }} </a>
                 </div>
+
+                {% if acetateEgg %}
+                    <br>
+                    <a href="https://www.youtube.com/watch?v=4SYSaHLWAYc" target="_blank"> C̨̻͕͚͞ͅḻ̢͔́͜i͏̧̣̤͇̬̩ͅc̷͖̘̞̩̪̘͎͉k͎̳̝ ̧̖̺̩̤̬͠ḿ̸̼̟͢ȩ͉̭̖͇͇̹̞!̸҉̷̩̞͍̫̠ͅ  </a>
+                {% endif %}
 
             {% endif %}
 

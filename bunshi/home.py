@@ -8,7 +8,8 @@ recentMax = 5
 @app.route("/", methods = ["POST", "GET"])
 def home():
     # flash(recent)
-    easterEgg = False
+    owoEgg = False
+    acetateEgg = False
     preferred = True
     error = False
     imageSource = ""
@@ -32,7 +33,10 @@ def home():
             preferred = info[5]
 
             if IUPAC == "dioxotungsten":
-                easterEgg = True
+                owoEgg = True
+
+            if IUPAC == "acetate":
+                acetateEgg = True
 
             # if compound in recent:
             #     recent.remove(compound)
@@ -51,7 +55,8 @@ def home():
                                IUPAC = IUPAC,
                                formula = formula,
                                weight = weight,
-                               easterEgg = easterEgg,
+                               owoEgg = owoEgg,
+                               acetateEgg = acetateEgg,
                                preferred = preferred,
                                error = error,
                                recent = recent)
