@@ -1,0 +1,64 @@
+html {
+    font-family: "Roboto";
+    color: #673f73; /* Text colour */
+    background: #ffe2eb; /* Background colour */
+    text-align: center;
+}
+
+header {
+    background: #f5f5f5;
+    height: 130px;
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer {
+    background: #f5f5f5;
+    height: 110px;
+    width: 450px;
+    bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    position: sticky;
+}
+
+body {
+    margin: 0;
+}
+
+input[name=recent] {
+    font-family: "Roboto";
+    color: #3657d4;
+    background: none;
+    text-decoration: underline;
+    border-width: 0px;
+    // display: inline;
+}
+
+.flashes {
+    color: #b7250f;
+}
+
+.main-header {
+    font-family: "Nothing You Could Do"; /* Header font*/
+    margin-top: 0;
+}
+
+.main-image {
+    height: 300px;
+    width: 300px;
+}
+
+.owo-image {
+    height: 300px;
+    width: 300px;
+}
+
+.main-container {
+    background: #f5f5f5;
+    height: 100vh;
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+}
