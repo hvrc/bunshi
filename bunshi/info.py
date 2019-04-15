@@ -1,5 +1,18 @@
 import requests
 from bs4 import BeautifulSoup
+from re import sub
+
+def cleanIUPAC(IUPAC):
+    return sub("[~{}]", "", IUPAC)
+
+def prettifyFormula(formula):
+    newFormula = []
+    for char in formula:
+        if char.isalpha():
+            newFormula.append("<span>%s</span>" % (char))
+        elif char.isdigit():
+            newFormula.append("<sub>%s</sub>" % (char))
+    return "".join(newFormula)
 
 def getInfo(compound):
 
@@ -30,7 +43,12 @@ def getInfo(compound):
         IUPAC = soup.find("meta", {"property": "og:title"})["content"]
         preferred = False
 
+    IUPAC = cleanIUPAC(IUPAC)
     formula = formulaSoup.find("span", {"class": "value"}).string
+    formula = prettifyFormula(formula)
     weight = weightSoup.find("span", {"class": "value"}).string
 
+
     return imageSource, pageURL, IUPAC, formula, weight, preferred
+
+print(getInfo("cocaine"))

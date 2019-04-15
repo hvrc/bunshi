@@ -55,12 +55,12 @@
                 <p> <i> {{ compound }} </i> </p>
 
                 {% if preferred %}
-                    <p> Pref. IUPAC Name: <b> {{ IUPAC }} </b> </p>
+                    <p> Pref. IUPAC Name: <b> {{ IUPAC|safe }} </b> </p>
                 {% else %}
-                    <p> Molecular Name: <b> {{ IUPAC }} </b> </p>
+                    <p> Molecular Name: <b> {{ IUPAC|safe }} </b> </p>
                 {% endif %}
 
-                <p> Molecular Formula: <b> {{ formula }} </b> </p>
+                <p> Molecular Formula: <b> {{ formula|safe }} </b> </p>
                 <p> Molecular Weight: <b> {{ weight }}g </b> </p>
 
                 <div title="PubChem">
