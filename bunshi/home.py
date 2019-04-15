@@ -38,12 +38,12 @@ def home():
             if IUPAC == "acetate":
                 acetateEgg = True
 
-            # if compound in recent:
-            #     recent.remove(compound)
-            # recent.insert(0, compound)
-            #
-            # if len(recent) > recentMax:
-            #     recent.pop(-1)
+            if compound in recent:
+                recent.remove(compound)
+            recent.insert(0, compound)
+
+            if len(recent) > recentMax:
+                recent.pop(-1)
 
         except TypeError as e:
             error = True
