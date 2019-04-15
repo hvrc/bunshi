@@ -48,7 +48,6 @@ def getInfo(compound):
     formula = prettifyFormula(formula)
     weight = weightSoup.find("span", {"class": "value"}).string
 
-
     return imageSource, pageURL, IUPAC, formula, weight, preferred
 
 print(getInfo("cocaine"))
