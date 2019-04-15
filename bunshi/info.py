@@ -3,7 +3,9 @@ from bs4 import BeautifulSoup
 from re import sub
 
 def cleanIUPAC(IUPAC):
-    return sub("[~{}]", "", IUPAC)
+    newIUPAC = sub("[,]", ", ", IUPAC)
+    newIUPAC = sub("[~{}]", "", newIUPAC)
+    return newIUPAC
 
 def prettifyFormula(formula):
     newFormula = []
@@ -49,5 +51,3 @@ def getInfo(compound):
     weight = weightSoup.find("span", {"class": "value"}).string
 
     return imageSource, pageURL, IUPAC, formula, weight, preferred
-
-print(getInfo("cocaine"))
