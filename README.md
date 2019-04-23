@@ -8,20 +8,26 @@ Made using Python, Flask & BeautifulSoup
 
 ## Run locally
 
-### Optional method for Windows
+### Method 1:
 
 Clone
 ```
 $ git clone "https://github.com/hvrc/Bunshi.git"
 $ cd Bunshi
 ```
-Run the .bat file...
+
+Run the shell script on a Mac...
+```
+$ bash run.sh
+```
+
+...or run the batch file on Windows...
 ```
 $ start run.bat
 ```
 ...and refresh the page
 
-### OR
+### Method 2:
 
 Clone
 ```
@@ -35,13 +41,13 @@ $ python3 -m venv venv
 $ . venv/bin/activate
 ```
 
-...on Windows
+On Windows:
 ```
 $ py -3 -m venv venv
 $ . venv/Scripts/activate
 
 ```
-...on Windows cmd
+On Windows cmd:
 ```
 > py -3 -m venv venv
 > venv\Scripts\activate.bat
@@ -59,7 +65,7 @@ $ export FLASK_ENV=development
 $ flask run
 ```
 
-... on Windows cmd
+On Windows cmd:
 ```
 > set FLASK_APP=bunshi
 > set FLASK_ENV=development

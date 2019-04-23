@@ -2,11 +2,12 @@ import requests
 from bs4 import BeautifulSoup
 from re import sub
 
+# removes tildes & curly brackets from IUPAC name
 def cleanIUPAC(IUPAC):
-    newIUPAC = sub("[,]", ", ", IUPAC)
     newIUPAC = sub("[~{}]", "", newIUPAC)
     return newIUPAC
 
+# add superscript and subscript to chemical formula
 def prettifyFormula(formula):
     newFormula = []
     for char in formula:
@@ -16,6 +17,7 @@ def prettifyFormula(formula):
             newFormula.append("<sub>%s</sub>" % (char))
     return "".join(newFormula)
 
+# scrapes & returns image address, page address, IUPAC name, chemical formula, molecular weight
 def getInfo(compound):
 
     imageName = "%s.png" % (compound)
@@ -38,6 +40,7 @@ def getInfo(compound):
     formulaSoup = BeautifulSoup(formulaPage.text, "html.parser")
     weightSoup = BeautifulSoup(weightPage.text, "html.parser")
 
+    # if IUPAC name is found, IUPAC name is tagged as 'preferred'
     try:
         IUPAC = iupacSoup.find("span", {"class": "value"}).string
         preferred = True
