@@ -63,7 +63,8 @@ def home():
                                owoEgg = owoEgg,
                                acetateEgg = acetateEgg,
                                preferred = preferred,
-                               error = error
+                               error = error,
+                               recent = recent
                                )
 
-    return render_template("home.html")
+    return render_template("home.html", recent = recent)
