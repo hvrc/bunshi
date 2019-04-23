@@ -39,7 +39,6 @@ def home():
             if IUPAC == "acetate":
                 acetateEgg = True
 
-        # generally raised if compound is spelled incorrectly or if it is non-existant
         except TypeError as e:
             error = True
 
