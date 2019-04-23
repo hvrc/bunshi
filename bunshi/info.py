@@ -4,7 +4,7 @@ from re import sub
 
 # removes tildes & curly brackets from IUPAC name
 def cleanIUPAC(IUPAC):
-    newIUPAC = sub("[~{}]", "", newIUPAC)
+    newIUPAC = sub("[~{}]", "", IUPAC)
     return newIUPAC
 
 # add superscript and subscript to chemical formula
