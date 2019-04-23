@@ -1,13 +1,16 @@
+# ?
 from bunshi import app
 from bunshi.info import getInfo
 from flask import flash, render_template, session, request
 
+# TODO This is probably what's causing the recent error
 recent = []
 recentMax = 5
 
+# route to homepage
 @app.route("/", methods = ["POST", "GET"])
 def home():
-    # flash(recent)
+    # default/null values passed when POST method isn't called
     owoEgg = False
     acetateEgg = False
     preferred = True
@@ -19,6 +22,7 @@ def home():
     weight = ""
 
     if request.method == "POST":
+        # compound defined as value specified in form
         posts = request.form
         for post in posts.items():
             compound = post[1].lower()
@@ -32,6 +36,7 @@ def home():
             weight = info[4]
             preferred = info[5]
 
+            # conditionals for easter eggs
             if IUPAC == "dioxotungsten":
                 owoEgg = True
 
@@ -58,8 +63,7 @@ def home():
                                owoEgg = owoEgg,
                                acetateEgg = acetateEgg,
                                preferred = preferred,
-                               error = error,
-                               recent = recent)
+                               error = error
+                               )
 
-    return render_template("home.html",
-                           recent = recent)
+    return render_template("home.html")
