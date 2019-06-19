@@ -1,7 +1,7 @@
 html {
     font-family: "Roboto";
-    color: #673f73; /* Text colour */
-    background: #ffe2eb; /* Background colour */
+    color: #673f73;
+    background: #ffe2eb;
     text-align: center;
 }
 
@@ -41,7 +41,7 @@ input[name=recent] {
 }
 
 .main-header {
-    font-family: "Nothing You Could Do"; /* Header font*/
+    font-family: "Nothing You Could Do";
     margin-top: 0;
 }
 

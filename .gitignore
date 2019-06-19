@@ -6,3 +6,5 @@ instance
 venv
 venv/
 *.pyc
+
+# bunshi/scripts/info_clean.py
